@@ -1,5 +1,5 @@
+import { rem } from 'styles/utils';
 import { css } from 'styled-components';
-import rem from './rem';
 /**
  * Mixins for generating CSS grid styles with IE fallbacks
  *
