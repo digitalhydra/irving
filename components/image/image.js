@@ -58,29 +58,35 @@ const Image = (props) => {
 
   return (
     <WrapperElement>
-      <span
-        className={classNames(
-          styles.wrapper,
-          className,
-          {
-            [styles.apsectRatio]: aspectRatio,
-            [styles.lazyload]: lazyload,
-            [styles.loaded]: loaded,
-            [styles.error]: error,
+      {imageContent && (
+        <span
+          className={classNames(
+            styles.wrapper,
+            className,
+            {
+              [styles.apsectRatio]: aspectRatio,
+              [styles.lazyload]: lazyload,
+              [styles.loaded]: loaded,
+              [styles.error]: error,
+            }
+          )}
+          style={{
+            ...paddingPercentage,
+            overflow: 'hidden',
+            marginBottom: '1rem',
+          }}
+        >
+          {lazyload ?
+            (
+              <Fragment>
+                {placeholder}
+                {imageContent}
+              </Fragment>
+            ) :
+            imageContent
           }
-        )}
-        style={paddingPercentage}
-      >
-        {lazyload ?
-          (
-            <Fragment>
-              {placeholder}
-              {imageContent}
-            </Fragment>
-          ) :
-          imageContent
-        }
-      </span>
+        </span>
+      )}
       {(caption && showCaption) && <figcaption>{caption}</figcaption>}
     </WrapperElement>
   );

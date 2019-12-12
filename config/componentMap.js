@@ -4,6 +4,7 @@ import Footer from 'components/footer';
 import Disqus from 'components/disqus';
 import GoogleTagManager from 'components/googleTagManager';
 import GoogleAnalytics from 'components/googleAnalytics';
+import ByLine from 'components/ByLine';
 import Head from 'components/head';
 import Image from 'components/image/image';
 import NotConfigured from 'components/notConfigured';
@@ -13,6 +14,7 @@ import Placeholder from 'components/placeholder';
 import SocialList from 'components/socialList';
 import SocialItem from 'components/socialItem';
 import withLoader from 'components/hoc/withLoader';
+import Heading from 'components/helpers/Heading';
 
 /**
  * Defines which React component to render for each received API component.
@@ -27,7 +29,7 @@ export const componentMap = {
   'google-analytics': GoogleAnalytics,
   'google-tag-manager': GoogleTagManager,
   head: Head,
-  header: Placeholder,
+  header: Heading,
   html: RawHTML,
   image: Image,
   menu: Placeholder,
@@ -36,6 +38,7 @@ export const componentMap = {
   'social-links': SocialList,
   'social-share': SocialList,
   'social-item': SocialItem,
+  byline: ByLine,
 };
 
 /**
